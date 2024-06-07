@@ -14,9 +14,8 @@ app.use('/api/v1' , users)
 app.use(bodyparser.json)
 
 port = 4000;
-dbconnection().then(()=>{
-    app.listen(port  , ()=>{
-    
-        console.log(`server is working fine at port ${port}`)
-    })
+
+app.listen(port , ()=>{
+    dbconnection()
+    console.log("database connection success")
 })
