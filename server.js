@@ -1,6 +1,8 @@
 const express = require("express")
 const cors = require("cors")
 const app = express()
+const dotenv = require("dotenv")
+dotenv.config({path : "./config.env"})
 const bodyparser = require("body-parser")
 const dbconnection = require("./database")
 app.use(express.json())
@@ -13,9 +15,9 @@ app.use('/api/v1' , users)
 
 app.use(bodyparser.json)
 
-port = 4000;
+const PORT = process.env.PORT
 
-app.listen(port , ()=>{
+app.listen(PORT , ()=>{
     dbconnection()
     console.log("database connection success")
 })
