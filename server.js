@@ -7,7 +7,7 @@ const bodyparser = require("body-parser")
 const dbconnection = require("./database")
 app.use(express.json())
 app.use(cors({
-    origin : "http://localhost:3000",
+    origin : "https://shivam-ecom1.netlify.app",
     credentials : true
 }))
 const users = require('./router')
